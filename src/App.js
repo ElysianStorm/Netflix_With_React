@@ -1,19 +1,19 @@
 import Browse from "./components/Browse";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Signup from "./components/Signup";
-import AuthProvider, { UserContext } from "./utils/UserContext";
-import { useState } from "react";
+import AuthProvider from "./utils/UserContext";
 import ProtectedRoute from "./utils/ProtectedRoute";
 function App() {
 	// const [user, setUser] = useState(null);
-
+	console.log(process.env);
+	const port = process.env.PORT;
+	console.log("port = ", port);
 	// function setLoggenInUser(user) {
 	// 	setUser(user);
 	// }
 	// console.log("App-->", user);
 	return (
 		<>
-			{/* <UserContext.Provider value={{ user, setUser }}> */}
 			<BrowserRouter>
 				<AuthProvider>
 					<Routes>
