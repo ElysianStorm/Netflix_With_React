@@ -85,7 +85,6 @@ const Signup = () => {
 					<span className="text-gray-300">
 						{isSignIn ? "new to netflix? " : "Already registered? "}
 					</span>
-					s
 					<span className="cursor-pointer " onClick={toggleForm}>
 						{isSignIn ? "Sign up now." : "Sign in"}
 					</span>

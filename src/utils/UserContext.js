@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
 	// 	}
 	// }, [user]);
 
-	if (user) navigate("/browse");
+	// if (user) navigate("/browse");
 
 	return (
 		<AuthContext.Provider value={{ user, setUser }}>

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Signup from "./components/Signup";
 import AuthProvider, { UserContext } from "./utils/UserContext";
 import { useState } from "react";
+import ProtectedRoute from "./utils/ProtectedRoute";
 function App() {
 	// const [user, setUser] = useState(null);
 
@@ -16,8 +17,14 @@ function App() {
 			<BrowserRouter>
 				<AuthProvider>
 					<Routes>
-						<Route path="/browse" element={<Browse />} />
-						<Route path="/signup" element={<Signup />} />
+						<Route
+							path="/browse"
+							element={<ProtectedRoute path="/browse" component={Browse} />}
+						/>
+						<Route
+							path="/signup"
+							element={<ProtectedRoute path="/signup" component={Signup} />}
+						/>
 					</Routes>
 				</AuthProvider>
 			</BrowserRouter>

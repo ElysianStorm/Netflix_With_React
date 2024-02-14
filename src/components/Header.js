@@ -3,7 +3,11 @@ import { UserContext } from "../utils/UserContext";
 import useAuth from "../hooks/useAuth";
 
 const Header = () => {
-	const { user } = useAuth();
+	const { user, setUser } = useAuth();
+
+	function handleSignOut() {
+		setUser(() => null);
+	}
 	//
 	return (
 		<div
@@ -16,7 +20,10 @@ const Header = () => {
 				></img>
 			</div>
 			{user && (
-				<button className="bg-red-600 rounded-md px-4 py-1 text-white  my-auto mr-28">
+				<button
+					onClick={handleSignOut}
+					className="bg-red-600 rounded-md px-4 py-1 text-white  my-auto mr-28"
+				>
 					Sign out
 				</button>
 			)}
