@@ -4,14 +4,6 @@ import Signup from "./components/Signup";
 import AuthProvider from "./utils/UserContext";
 import ProtectedRoute from "./utils/ProtectedRoute";
 function App() {
-	// const [user, setUser] = useState(null);
-	console.log(process.env);
-	const port = process.env.PORT;
-	console.log("port = ", port);
-	// function setLoggenInUser(user) {
-	// 	setUser(user);
-	// }
-	// console.log("App-->", user);
 	return (
 		<>
 			<BrowserRouter>

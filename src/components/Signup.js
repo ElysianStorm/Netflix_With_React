@@ -27,7 +27,7 @@ const Signup = () => {
 			password: enteredPassword,
 		});
 
-		console.log(UsersModule.getAllUsers());
+		// console.log(UsersModule.getAllUsers());
 		setUser({
 			email: enteredEmail,
 			password: enteredPassword,
