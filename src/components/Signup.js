@@ -38,7 +38,7 @@ const Signup = () => {
 
 	return (
 		<div className=" ">
-			<Header></Header>
+			<Header logoStyle="w-48 ml-32"></Header>
 			<div className="w-full ">
 				<img
 					className="absolute"

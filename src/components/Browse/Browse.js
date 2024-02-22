@@ -4,8 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import { API_OPTIONS } from "../../utils/constants";
 import Maincontainer from "./Maincontainer";
 import Secondarycontainer from "./Secondarycontainer";
-const Browse = () =>
-{
+const Browse = () => {
 	const { user } = useAuth();
 	const [movieData, setMovieData] = useState(null);
 	const getNowPlayingMovies = async () => {
@@ -27,11 +26,12 @@ const Browse = () =>
 	console.log("movieData-->", movieData);
 	if (!movieData) return;
 	return (
-		<>
-			<Header></Header>
-			<Maincontainer mainMovie={movieData?.results[0]}></Maincontainer>
-			<Secondarycontainer></Secondarycontainer>
-		</>
+		<div>
+			<Header className="mt-24" logoStyle="w-32 ml-12"></Header>
+			<Maincontainer mainMovie={movieData?.results[7]}></Maincontainer>
+
+			<Secondarycontainer movies={movieData?.results}></Secondarycontainer>
+		</div>
 	);
 };
 

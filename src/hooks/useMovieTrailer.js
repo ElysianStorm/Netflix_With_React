@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { API_OPTIONS } from "../utils/constants";
 
-const useMovieTrailer = (movieId,setTrailer) =>
+const useMovieTrailer = (movieId) =>
 {
+	const [trailer, setTrailer] = useState(null);
+
     async function getMovieVideo() {
 		const res = await fetch(
 			`https://api.themoviedb.org/3/movie/${movieId}/videos`,
@@ -27,7 +29,8 @@ const useMovieTrailer = (movieId,setTrailer) =>
 
 	useEffect(() => {
 		getMovieVideo();
-	}, []);
+    }, [] );
+    return trailer;
 }
 
 export default useMovieTrailer;
