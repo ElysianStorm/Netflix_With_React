@@ -11,7 +11,7 @@ const Header = ({ className, logoStyle }) => {
 	//
 	return (
 		<div
-			className={` absolute flex justify-between   w-screen  left-0 right-0  z-20 bg-gradient-to-b from-black ${className}`}
+			className={` absolute flex justify-between   w-screen  left-0 right-0  z-10 bg-gradient-to-b from-black ${className}`}
 		>
 			<div className={` ${logoStyle}`}>
 				<img

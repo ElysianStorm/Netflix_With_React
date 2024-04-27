@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { API_OPTIONS } from "../../utils/constants";
 import useMovieTrailer from "../../hooks/useMovieTrailer";
 
-const VideoBackground = ({ movieId }) => {
+const VideoBackground = ({ movieId, audio }) => {
 	const trailer = useMovieTrailer(movieId);
 
 	if (trailer) console.log("Trailer-->", trailer);
@@ -11,9 +11,9 @@ const VideoBackground = ({ movieId }) => {
 		<div className="w-screen relative -mt-24 ">
 			<iframe
 				className="w-screen aspect-video"
-				src={`https://www.youtube.com/embed/${trailer?.key}?si=u6GVNnX6uw3yI6mu?&autoplay=1&mute=1`}
+				src={`https://www.youtube.com/embed/${trailer?.key}?si=u6GVNnX6uw3yI6mu?&autoplay=1&${audio}`}
 				title="YouTube video player"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allow="accelerometer;  autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 			></iframe>
 		</div>
 	);
